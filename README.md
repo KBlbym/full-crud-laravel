@@ -11,12 +11,16 @@ Generación automática: Crea controladores con todo el código necesario para e
 3. Pega la carpeta templates dentro de la carpeta views de tu proyecto.
 4. Crea un modelo.
 5. Ejecuta el siguiente comando para crear el controlador junto con sus vistas, utilizando los datos de tu modelo creado anteriormente:
+   ```
     php artisan make:controller-crud ElNombreDelModelo --views
+   ```
    
   La opción --views crea las vistas además del controlador. Puedes omitirla si solo deseas crear el controlador.
   
-6. Si no especificaste la opción --views en el paso anterior, puedes crear las vistas más adelante ejecutando el siguiente comando:
-  php artisan make:view-crud ElNombreDelModelo
+6. Si no especificaste la opción ``` --views ``` en el paso anterior, puedes crear las vistas más adelante ejecutando el siguiente comando:
+```
+php artisan make:controller-crud ElNombreDelModelo --views
+```
 
 7. Finalmente, agrega las rutas al archivo app\routes\web.php, además de configurar tu base de datos.
    
