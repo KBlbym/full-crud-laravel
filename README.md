@@ -7,8 +7,8 @@ Generación automática: Crea controladores con todo el código necesario para e
 
 # Uso:
 1. Crea un proyecto Laravel con tu herramienta preferida.
-2. Copia los archivos ``` MakeControllerCrudCommand.php ``` y ``` MakeViewCrudCommand.php ``` a la ruta de tu proyecto App\Console\Commands\.
-3. Pega la carpeta templates dentro de la carpeta views de tu proyecto.
+2. Copia los archivos ``` MakeControllerCrudCommand.php ``` y ``` MakeViewCrudCommand.php ``` a la ruta de tu proyecto ``` App\Console\Commands\ ```.
+3. Pega la carpeta templates dentro de la carpeta ``` resources\views ``` de tu proyecto.
 4. Crea un modelo.
 5. Ejecuta el siguiente comando para crear el controlador junto con sus vistas, utilizando los datos de tu modelo creado anteriormente:
    ```
