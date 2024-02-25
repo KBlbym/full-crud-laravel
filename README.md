@@ -7,7 +7,7 @@ Generación automática: Crea controladores con todo el código necesario para e
 
 # Uso:
 1. Crea un proyecto Laravel con tu herramienta preferida.
-2. Copia los archivos ``` MakeControllerCrudCommand.php ``` y ``` MakeViewCrudCommand.php ``` a la ruta de tu proyecto ``` App\Console\Commands\ ```.
+2. Copia los archivos ``` MakeControllerCrudCommand.php ``` y ``` MakeViewCrudCommand.php ``` a la ruta de tu proyecto ``` App\Console\Commands\ ``` si no existe creala.
 3. Pega la carpeta templates dentro de la carpeta ``` resources\views ``` de tu proyecto.
 4. Crea un modelo.
 5. Ejecuta el siguiente comando para crear el controlador junto con sus vistas, utilizando los datos de tu modelo creado anteriormente:
@@ -19,10 +19,20 @@ Generación automática: Crea controladores con todo el código necesario para e
   
 6. Si no especificaste la opción ``` --views ``` en el paso anterior, puedes crear las vistas más adelante ejecutando el siguiente comando:
 ```
-php artisan make:controller-crud ElNombreDelModelo --views
+php artisan make:view-crud ElNombreDelModelo
 ```
-
-7. Finalmente, agrega las rutas al archivo app\routes\web.php, además de configurar tu base de datos.
+7. En tu modelo, añade el siguiente método con los nombres de tus campos y sus tipos: 
+````
+public function getAttributeTypes()
+    {
+        return [
+        'name' => 'string',
+        'code' => 'integer'
+        ];
+    }
+```
+8. Por defecto, se utiliza el layout master.blade.php. Si no lo tienes, créalo, o cámbialo en los archivos de la carpeta templates.
+9. Finalmente, agrega las rutas al archivo app\routes\web.php, además de configurar tu base de datos.
    
 # ¡Listo! Ahora puedes disfrutar de la creación automática de CRUD en tu proyecto Laravel de forma rápida y sencilla.
 
